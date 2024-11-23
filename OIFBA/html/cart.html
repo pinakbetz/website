@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="/OIFBA/css/style.css">
+    <!-- Boxicons CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header" id="header" style="color: white; box-shadow: 0 4px 50px rgba(0, 0, 0, 0.1);">
+        <div class="logo" style="display: flex; align-items: center; color: black;">
+            <img class="logo" src="/OIFBA/assets/images/logo-removebg-preview.png" alt="logo">
+        </div>
+
+        <div class="navbar">
+            <ul>
+                <li><a href="/OIFBA/html/home.html">Home</a></li>
+                <li><a href="/OIFBA/html/product.html">Products</a></li>
+                <li><a href="/OIFBA/html/about.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="/OIFBA/html/account.html">Account</a></li>
+                <img class="cart-icon" src="/OIFBA/assets/images/cart.png" width="auto" height="30px" alt="cart-icon">
+            </ul>
+        </div>
+    </div>
+
+
+
+    <!-- Cart Items Details -->
+<div class="small-container cart-page">
+    <h2 style="text-align: center; margin-bottom: 20px;">Your Cart</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="/OIFBA/assets/images/product1-tilapia.png" alt="Tilapia Image">
+                        <div>
+                            <p>Tilapia</p>
+                            <small>Price: Php 60.00</small>
+                            <a href="#" class="remove-btn">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1" min="1"></td>
+                <td>Php 60.00</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2" style="text-align: right; font-weight: bold;">Total:</td>
+                <td>Php 60.00</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+
+
+
+    
+
+      <script src="/OIFBA/script/script.js"> </script>
+</body>
+</html>
