@@ -30,14 +30,13 @@ include('connect.php'); // Include your database connection
                 <li><a href="/OIFBA/html/about.html">About</a></li>
                 <li><a href="#">Contact</a></li>
 
-                <?php if (isset($_SESSION['user_name'])): ?>
+                <?php if (isset($_SESSION['fName'])): ?>
                     <!-- If the user is logged in, show their name and logout option -->
-                    <li><a href="/OIFBA/html/account.php">Welcome, <?php echo $_SESSION['user_name']; ?></a></li>
+                    <li><a href="/OIFBA/html/account.php">Welcome, <?php echo $_SESSION['fName']; ?></a></li>
                     <li><a href="/OIFBA/html/logout.php">Logout</a></li>
                 <?php else: ?>
                     <!-- If the user is not logged in, show login and signup links -->
-                    <li><a href="/OIFBA/html/login.php">Login</a></li>
-                    <li><a href="/OIFBA/html/signup.php">Signup</a></li>
+                    <li><a href="customer-signup.php">Login</a></li>
                 <?php endif; ?>
                 
                 <img class="cart-icon" src="/OIFBA/assets/images/cart.png" width="auto" height="30px" alt="cart-icon">
