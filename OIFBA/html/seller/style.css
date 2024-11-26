@@ -1,0 +1,146 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Header */
+.header {
+    top: 0;
+    height: 80px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px; /* Adjusted padding for balance */
+    width: 100%;
+    background-color: transparent; /* Transparent by default */
+    color: black;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.header.scrolled {
+    background-color: white; /* Background color when scrolled */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+/* Logo in Header */
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header .logo img {
+    height: 50px; /* Ensure the logo fits nicely */
+}
+
+/* Navbar */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #1c19db; /* Hover color */
+}
+
+/* Cart Icon */
+.cart-icon {
+    margin-left: 20px;
+    height: 30px;
+}
+
+/* Main Content (Below Header) */
+.dashboard {
+    margin-top: 100px; /* Adds spacing below the fixed header */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 200px;
+}
+
+/* Dashboard Cards */
+.dashboard-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    width: 200px;
+    padding: 15px;
+    background: #f4f4f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #1c19db;
+}
+
+.card p {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card .btn {
+    display: inline-block;
+    background-color: #1c19db;
+    color: #fff;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.card .btn:hover {
+    background-color: #1514a3;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        padding: 0 20px; /* Reduce padding on smaller screens */
+    }
+
+    .dashboard-content {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+    }
+
+    .card {
+        width: 90%; /* Cards take full width on smaller screens */
+    }
+}

@@ -40,43 +40,69 @@ links.forEach(link => {
 
 
 document.querySelector(".signup form").addEventListener("submit", function (e) {
-  e.preventDefault(); // Prevent form submission
+  e.preventDefault(); // Prevent form submission for validation
 
-  // Retrieve password values
-  const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirmPassword").value;
-
-  // Error message element
+  const password = document.getElementById("inputPassword").value.trim(); // Remove spaces
+  const confirmPassword = document.getElementById("confirmPassword").value.trim(); // Remove spaces
   const errorElement = document.getElementById("passwordError");
 
-  // Check if passwords match
   if (password !== confirmPassword) {
       errorElement.style.display = "block"; // Show error message
       errorElement.textContent = "Passwords do not match.";
   } else {
       errorElement.style.display = "none"; // Hide error message
-      alert("Signup successful!");
-
-      // Submit the form to PHP
-      this.submit();
+      this.submit(); // Submit form if passwords match
   }
 });
 
 
 
-// Real-time validation as the user types in the "Confirm Password" field
-document.getElementById("confirmPassword").addEventListener("input", function () {
-    const password = document.getElementById("password").value;
-    const confirmPassword = this.value;
-    const errorElement = document.getElementById("passwordError");
 
-    if (password !== confirmPassword) {
-        errorElement.style.display = "block";
-    } else {
-        errorElement.style.display = "none";
-    }
+
+
+
+// // Real-time validation as the user types in the "Confirm Password" field
+// document.getElementById("confirmPassword").addEventListener("input", function () {
+//     const password = document.getElementById("password").value;
+//     const confirmPassword = this.value;
+//     const errorElement = document.getElementById("passwordError");
+
+//     if (password !== confirmPassword) {
+//         errorElement.style.display = "block";
+//     } else {
+//         errorElement.style.display = "none";
+//     }
+// });
+
+
+
+// Fetch product list on page load
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("/OIFBA/html/seller/manage-product.php")
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById("product-list").innerHTML = data;
+      });
 });
 
+// Edit product
+function editProduct(id) {
+  window.location.href = `/html/edit-product.html?id=${id}`;
+}
+
+// Delete product
+function deleteProduct(id) {
+  if (confirm("Are you sure you want to delete this product?")) {
+      fetch(`/OIFBA/html/seller/delete-product.php?id=${id}`, {
+          method: "POST"
+      })
+      .then(response => response.text())
+      .then(data => {
+          alert(data);
+          location.reload(); // Reload the page after deletion
+      });
+  }
+}
 
 
 

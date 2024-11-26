@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="/OIFBA/html/seller/style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header" id="header" style="color: white; box-shadow: 0 4px 50px rgba(0, 0, 0, 0.1);">
+        <div class="logo" style="display: flex; align-items: center; color: black;">
+            <img class="logo" src="/OIFBA/assets/images/logo-removebg-preview.png" alt="logo">
+            <h1 style="padding: 20px; color: #4A6DE5;">Seller Dashboard</h1>
+        </div>
+
+        <div class="navbar">
+            <ul>
+                <li><a href="/OIFBA/html/home.html">Home</a></li>
+                <li><a href="/OIFBA/html/orders.html">Orders</a></li>
+                <li><a href="/OIFBA/html/add-product.html">Add Product</a></li>
+                <li><a href="/OIFBA/html/seller/manage-products.html">Manage Products</a></li>
+                <li><a href="/OIFBA/html/account.html">Account</a></li>
+                <img class="cart-icon" src="/OIFBA/assets/images/cart.png" width="auto" height="30px" alt="cart-icon">
+            </ul>
+        </div>
+    </div>
+
+    
+    <div class="container">
+        <h1>Account Settings</h1>
+        <form action="/php/account-settings.php" method="POST">
+            <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" value="<?php echo $currentName; ?>" required>
+            </div>
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="<?php echo $currentEmail; ?>" required>
+            </div>
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <button type="submit" class="btn">Update Settings</button>
+        </form>
+    </div>
+</body>
+</html>

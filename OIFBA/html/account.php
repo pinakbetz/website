@@ -34,7 +34,7 @@
         <div class="form login">
             <div class="form-content">
                 <header>Login</header>
-                <form action="register.php" method="POST">
+                <form action="signin.php" method="POST">
                     <div class="field input-field">
                         <input type="email" name="email" placeholder="Email" class="input">
                     </div>
@@ -59,7 +59,7 @@
         <div class="form signup">
             <div class="form-content">
                 <header>Signup</header>
-                <form action="register.php" method="POST">
+                <form action="signup.php" method="POST">
                     <div class="field input-field">
                         <input type="text" name="fName" placeholder="First Name" class="input" required>
                     </div>
@@ -73,13 +73,17 @@
                         <input type="password" name="password" id="password" placeholder="Create password" class="password" required>
                     </div>
                     <div class="field input-field">
-                        <input type="password" id="confirmPassword" placeholder="Confirm password" class="password" required>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" class="password" required>
                         <i class='bx bx-hide eye-icon'></i>
                     </div>
                     <div id="passwordError" style="color: red; font-size: 12px; display: none;">Passwords do not match.</div>
                     <div class="field button-field">
-                        <button type="submit" name="signUP">Signup</button>
+                        <button type="submit" name="signup">Signup</button>
                     </div>
+                    <select name="role" required>
+                        <option value="customer">Customer</option>
+                        <option value="seller">Seller</option>
+                    </select>
                 </form>
                 <div class="form-link">
                     <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
