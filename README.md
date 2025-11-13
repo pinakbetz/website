@@ -1,1 +1,1 @@
-This is for system proposal. The website are clearly bad but this is up for next week.
+This is for system proposal. The website is clearly bad but this is up for next week.
